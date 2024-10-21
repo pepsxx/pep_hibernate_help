@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/pepsxx/hibernate/help/v005_hql_sql/Main.java" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/pepsxx/hibernate/help/v006_one_to_many/Main.java" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/SQL_DDL.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/SQL_DML.sql" dialect="PostgreSQL" />
+    <file url="PROJECT" dialect="PostgreSQL" />
+  </component>
+</project>
