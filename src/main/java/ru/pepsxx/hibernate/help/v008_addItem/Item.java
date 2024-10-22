@@ -59,4 +59,11 @@ public class Item {
                 ", person=" + person.getName() +
                 '}';
     }
+
+    // add Item Custom
+    public static Item addNewItemCustom(String description, Person person) {
+        Item item = new Item(description, person);
+        person.getItems().add(item);
+        return item;
+    }
 }

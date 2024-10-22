@@ -80,4 +80,10 @@ public class Person {
                 ", items=" + items.stream().map(Item::getDescription).toList() +
                 '}';
     }
+
+    // delete Person (Custom)
+    public void deletePersonCustom() {
+            items.forEach(item -> item.setPerson(null));
+            items.clear();
+    }
 }

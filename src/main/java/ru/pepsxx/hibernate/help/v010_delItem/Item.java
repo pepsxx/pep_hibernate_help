@@ -59,4 +59,10 @@ public class Item {
                 ", person=" + person.getName() +
                 '}';
     }
+
+    // delete Item (Custom)
+    public void deleteItemCustom() {
+        this.getPerson().getItems().remove(this);
+        this.setPerson(null);
+    }
 }

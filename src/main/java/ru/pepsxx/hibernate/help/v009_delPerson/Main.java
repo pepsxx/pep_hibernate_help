@@ -26,14 +26,12 @@ public class Main {
             items.forEach(System.out::println);
             System.out.println("-------------------------");
 
-            // Удаляем Person в SQL
+            // Удаляем в SQL
             session.remove(person);
             System.out.println("-------------------------");
 
-            // Правим Item в JAVA
-            items.forEach(i -> i.setPerson(null));
-            // Правим Person в JAVA
-            person.getItems().clear();
+            // Удаляем в JAVA (Custom)
+            person.deletePersonCustom();
 
             System.out.println(person);
             items.forEach(System.out::println);

@@ -26,10 +26,8 @@ public class Main {
             items.forEach(System.out::println);
             System.out.println("--------------------------");
 
-            // Создаём Item в JAVA
-            Item item = new Item("TestItemAdd", person);
-            // Правим Person в JAVA
-            person.getItems().add(item);
+            // Создаём в JAVA (Custom)
+            Item item = Item.addNewItemCustom("TestItemAdd", person);
             System.out.println("-------------------------");
 
             // Фиксирует в SQL

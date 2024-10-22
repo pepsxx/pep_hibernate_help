@@ -20,7 +20,7 @@ public class Main {
 
             int random = ThreadLocalRandom.current().nextInt(10, 50);
 
-            // Создаём Person JAVA
+            // Создаём в JAVA
             Person person = new Person("TestPersonAdd", random);
             System.out.println("-------------------------");
 
