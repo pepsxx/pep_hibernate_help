@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v016_many_to_many;
+package ru.pepsxx.hibernate.help.v016_many_to_many.v001_3class;
 
 import jakarta.persistence.*;
 

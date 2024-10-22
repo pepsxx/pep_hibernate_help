@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v018_primary_keys;
+package ru.pepsxx.hibernate.help.v019_primary_keys;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

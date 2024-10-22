@@ -1,25 +1,28 @@
-package ru.pepsxx.hibernate.help.v017_entity_manager;
+package ru.pepsxx.hibernate.help.v016_many_to_many.v001_3class;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.LockModeType;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import ru.pepsxx.hibernate.help.v001_persist.Person;
 
 public class Main {
     public static void main(String[] args) {
 
         Configuration configuration = new Configuration()
-                .addAnnotatedClass(Person.class);
+                .addAnnotatedClass(Room.class)
+                .addAnnotatedClass(Guest.class)
+                .addAnnotatedClass(RoomGuest.class);
 
         try (SessionFactory sessionFactory = configuration.buildSessionFactory()) {
             Session session = sessionFactory.getCurrentSession();
             session.beginTransaction();
 
-            EntityManager entityManager = sessionFactory.createEntityManager();
-            Person person = entityManager.find(Person.class, 1L);
-            System.out.println("person = " + person);
+            Guest alex = new Guest("Alex");
+            Room room = new Room(101);
+            RoomGuest roomGuest = new RoomGuest(alex, room);
+
+            session.persist(alex);
+            session.persist(room);
+            session.persist(roomGuest);
 
             session.getTransaction().commit();
         }
