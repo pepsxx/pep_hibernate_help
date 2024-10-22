@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v004_update;
+package ru.pepsxx.hibernate.help.v003_remove;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,20 +25,19 @@ public class Main {
         session.beginTransaction();
 
         // Получили из базы
-        Person person1 = session.get(Person.class, 1);
-        Person person3 = session.get(Person.class, 3);
+        Person person1 = session.find(Person.class, 1);
+        Person person2 = session.find(Person.class, 2);
+        Person person3 = session.find(Person.class, 3);
 
-        person1.setName("NewName");
-        person3.setAge(11);
+        // Удаление
+        session.remove(person1);
+        session.remove(person2); // Session и EntityManager
+        session.delete(person3); // Session
 
         // Закрытие Транзакции
         session.getTransaction().commit();
         // Закрытие сессии
         session.close();
-
-        System.out.println("В db данные обновились по окончанию транзакции");
-        System.out.println("person1 = " + person1);
-        System.out.println("person3 = " + person3);
 
     }
 }

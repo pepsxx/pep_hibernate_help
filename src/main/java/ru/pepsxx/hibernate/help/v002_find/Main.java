@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v001_save;
+package ru.pepsxx.hibernate.help.v002_find;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -24,19 +24,20 @@ public class Main {
         // Открытие Транзакции
         session.beginTransaction();
 
-        Person person1 = new Person("Alex", 41);
-        Person person2 = new Person("Jony", 31);
-        Person person3 = new Person("Boby", 21);
+        // Получили из базы
+        Person person3 = session.find(Person.class, 1); // Session и EntityManager
+        Person person2 = session.get(Person.class, 2);  // Session
+        Person person1 = session.load(Person.class, 3); // Session (ленивый)
 
-        // Сохранение в базу
-        // session.save(person1); // Deprecated
-        session.persist(person2);
-        session.persist(person3);
+        System.out.println("person1 = " + person1); // load ленивый
 
         // Закрытие Транзакции
         session.getTransaction().commit();
         // Закрытие сессии
         session.close();
+
+        System.out.println("person2 = " + person2);
+        System.out.println("person3 = " + person3);
 
     }
 }

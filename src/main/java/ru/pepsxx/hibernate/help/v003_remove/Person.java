@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v004_update;
+package ru.pepsxx.hibernate.help.v003_remove;
 
 import jakarta.persistence.*;
 

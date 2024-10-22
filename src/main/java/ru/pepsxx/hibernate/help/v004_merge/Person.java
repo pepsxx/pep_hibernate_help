@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v002_get;
+package ru.pepsxx.hibernate.help.v004_merge;
 
 import jakarta.persistence.*;
 

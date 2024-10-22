@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v001_save;
+package ru.pepsxx.hibernate.help.v001_persist;
 
 import jakarta.persistence.*;
 

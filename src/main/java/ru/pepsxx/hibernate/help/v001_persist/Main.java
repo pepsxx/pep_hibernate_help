@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v003_delete;
+package ru.pepsxx.hibernate.help.v001_persist;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -24,13 +24,14 @@ public class Main {
         // Открытие Транзакции
         session.beginTransaction();
 
-        // Получили из базы
-        Person person1 = session.get(Person.class, 1);
-        Person person2 = session.get(Person.class, 2);
+        Person person1 = new Person("Alex", 41);
+        Person person2 = new Person("Jony", 31);
+        Person person3 = new Person("Boby", 21);
 
-        // Удаление
-        // session.delete(person1); // Deprecated
-        session.remove(person2);
+        // Сохранение в базу
+        session.persist(person1);
+        session.merge(person2); // Session и EntityManager
+        session.save(person3);    // Session
 
         // Закрытие Транзакции
         session.getTransaction().commit();
