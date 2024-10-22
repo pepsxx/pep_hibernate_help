@@ -1,8 +1,6 @@
-package ru.pepsxx.hibernate.help.v009_delPerson;
+package ru.pepsxx.hibernate.help.v007_addItem;
 
 import jakarta.persistence.*;
-
-import java.util.Optional;
 
 @Entity
 @Table(name = "Item")
@@ -58,7 +56,14 @@ public class Item {
         return "Item{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
-                ", person=" + Optional.ofNullable(person).map(p -> p.getName()).orElse("") +
+                ", person=" + person.getName() +
                 '}';
+    }
+
+    // add Item Custom
+    public static Item addNewItemCustom(String description, Person person) {
+        Item item = new Item(description, person);
+        person.getItems().add(item);
+        return item;
     }
 }

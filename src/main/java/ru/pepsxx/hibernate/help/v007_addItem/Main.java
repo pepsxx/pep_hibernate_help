@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v010_delItem;
+package ru.pepsxx.hibernate.help.v007_addItem;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,25 +20,23 @@ public class Main {
 
             int random = ThreadLocalRandom.current().nextInt(10, 50);
 
-
-            Item item = session.get(Item.class, random);
-            Person person = item.getPerson();
+            Person person = session.get(Person.class, random);
             List<Item> items = person.getItems();
             System.out.println(person);
             items.forEach(System.out::println);
+            System.out.println("--------------------------");
+
+            // Создаём в JAVA (Custom)
+            Item item = Item.addNewItemCustom("TestItemAdd", person);
             System.out.println("-------------------------");
 
-            // Удаляем в SQL
-            session.remove(item);
-            System.out.println("-------------------------");
-
-            // Правим в JAVA
-            item.deleteItemCustom();
+            // Фиксирует в SQL
+            session.persist(item);
             System.out.println("-------------------------");
 
             System.out.println(person);
             items.forEach(System.out::println);
-            System.out.println("------------------------");
+            System.out.println("-------------------------");
 
             session.getTransaction().commit();
         }

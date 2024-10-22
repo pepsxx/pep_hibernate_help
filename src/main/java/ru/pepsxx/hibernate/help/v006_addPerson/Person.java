@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v009_delPerson;
+package ru.pepsxx.hibernate.help.v006_addPerson;
 
 import jakarta.persistence.*;
 
@@ -79,11 +79,5 @@ public class Person {
                 ", age=" + age +
                 ", items=" + items.stream().map(Item::getDescription).toList() +
                 '}';
-    }
-
-    // delete Person (Custom)
-    public void deletePersonCustom() {
-            items.forEach(item -> item.setPerson(null));
-            items.clear();
     }
 }

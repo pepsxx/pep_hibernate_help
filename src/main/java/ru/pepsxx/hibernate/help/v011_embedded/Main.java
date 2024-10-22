@@ -3,8 +3,6 @@ package ru.pepsxx.hibernate.help.v011_embedded;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import ru.pepsxx.hibernate.help.v010_delItem.Item;
-import ru.pepsxx.hibernate.help.v010_delItem.Person;
 
 public class Main {
     public static void main(String[] args) {

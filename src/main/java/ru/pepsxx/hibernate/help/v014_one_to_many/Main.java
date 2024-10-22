@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v007_addPerson;
+package ru.pepsxx.hibernate.help.v014_one_to_many;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,18 +20,16 @@ public class Main {
 
             int random = ThreadLocalRandom.current().nextInt(10, 50);
 
-            // Создаём в JAVA
-            Person person = new Person("TestPersonAdd", random);
-            System.out.println("-------------------------");
-
-            // Фиксирует в SQL
-            session.persist(person);
-            System.out.println("-------------------------");
-
-            System.out.println(person);
+            System.out.println("1-------------------------");
+            Person person = session.get(Person.class, random);
+            System.out.println("2-------------------------");
             List<Item> items = person.getItems();
+            System.out.println("3-------------------------");
             items.forEach(System.out::println);
-            System.out.println("-------------------------");
+            System.out.println("4-------------------------");
+            System.out.println("person = " + person);
+            System.out.println("5-------------------------");
+
 
             session.getTransaction().commit();
         }

@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v010_delItem;
+package ru.pepsxx.hibernate.help.v006_addPerson;
 
 import jakarta.persistence.*;
 
@@ -58,11 +58,5 @@ public class Item {
                 ", description='" + description + '\'' +
                 ", person=" + person.getName() +
                 '}';
-    }
-
-    // delete Item (Custom)
-    public void deleteItemCustom() {
-        this.getPerson().getItems().remove(this);
-        this.setPerson(null);
     }
 }

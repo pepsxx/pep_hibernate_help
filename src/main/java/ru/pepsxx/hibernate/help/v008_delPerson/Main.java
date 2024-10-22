@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v009_delPerson;
+package ru.pepsxx.hibernate.help.v008_delPerson;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v010_delItem;
+package ru.pepsxx.hibernate.help.v009_delItem;
 
 import jakarta.persistence.*;
 

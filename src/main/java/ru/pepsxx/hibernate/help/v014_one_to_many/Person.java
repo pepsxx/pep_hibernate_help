@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v007_addPerson;
+package ru.pepsxx.hibernate.help.v014_one_to_many;
 
 import jakarta.persistence.*;
 

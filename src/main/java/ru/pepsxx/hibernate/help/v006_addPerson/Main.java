@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v008_addItem;
+package ru.pepsxx.hibernate.help.v006_addPerson;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,21 +20,16 @@ public class Main {
 
             int random = ThreadLocalRandom.current().nextInt(10, 50);
 
-            Person person = session.get(Person.class, random);
-            List<Item> items = person.getItems();
-            System.out.println(person);
-            items.forEach(System.out::println);
-            System.out.println("--------------------------");
-
-            // Создаём в JAVA (Custom)
-            Item item = Item.addNewItemCustom("TestItemAdd", person);
+            // Создаём в JAVA
+            Person person = new Person("TestPersonAdd", random);
             System.out.println("-------------------------");
 
             // Фиксирует в SQL
-            session.persist(item);
+            session.persist(person);
             System.out.println("-------------------------");
 
             System.out.println(person);
+            List<Item> items = person.getItems();
             items.forEach(System.out::println);
             System.out.println("-------------------------");
 

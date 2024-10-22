@@ -1,4 +1,4 @@
-package ru.pepsxx.hibernate.help.v008_addItem;
+package ru.pepsxx.hibernate.help.v007_addItem;
 
 import jakarta.persistence.*;
 
