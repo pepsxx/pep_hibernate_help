@@ -26,7 +26,7 @@ public class Main {
         session.beginTransaction();
 
         String HQL = """
-                from Guest
+                from Person
                 where id > 1""";
         String SQL = """
                 SELECT *

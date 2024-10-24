@@ -14,15 +14,15 @@ public class Main {
                 .addAnnotatedClass(Person.class);
 
         try (SessionFactory sessionFactory = configuration.buildSessionFactory()) {
-            Session session = sessionFactory.getCurrentSession();
-            session.beginTransaction();
 
             EntityManager entityManager = sessionFactory.createEntityManager();
+            entityManager.getTransaction().begin();
+
             Person person = entityManager.find(Person.class, 1L);
             System.out.println("person = " + person);
 
-            session.getTransaction().commit();
-        }
+            entityManager.getTransaction().commit();
 
+        }
     }
 }
