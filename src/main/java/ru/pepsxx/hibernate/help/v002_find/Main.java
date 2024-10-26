@@ -29,6 +29,9 @@ public class Main {
         Person person2 = session.get(Person.class, 2);  // Session
         Person person1 = session.load(Person.class, 3); // Session (ленивый)
 
+        // load возвращает proxy объект с Id без загрузки из db сущности
+        System.out.println("person1.getId() = " + person1.getId());
+
         System.out.println("person1 = " + person1); // load ленивый
 
         // Закрытие Транзакции

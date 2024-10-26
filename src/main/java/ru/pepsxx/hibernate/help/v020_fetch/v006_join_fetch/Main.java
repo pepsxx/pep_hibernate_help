@@ -24,7 +24,7 @@ public class Main {
 
             System.out.println("Основной запрос на получение Person-------------------------");
             String HQL = """
-                    FROM Person AS p
+                    FROM Person p
                     JOIN FETCH p.items i
                     WHERE p.id IN (:ids)""";
             Query<Person> query = session.createQuery(HQL, Person.class);

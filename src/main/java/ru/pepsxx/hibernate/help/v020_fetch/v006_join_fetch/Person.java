@@ -26,7 +26,6 @@ public class Person {
     @Column(name = "name")
     private String name;
 
-
     @Column(name = "age")
     private int age;
 
