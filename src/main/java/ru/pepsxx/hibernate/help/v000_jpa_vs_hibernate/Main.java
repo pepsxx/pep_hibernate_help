@@ -8,7 +8,6 @@ import ru.pepsxx.hibernate.help.pre_start.PreStartUtil;
 import ru.pepsxx.hibernate.help.v001_persist.Person;
 
 public class Main {
-
     public static void main(String[] args) {
         PreStartUtil.go();
 
