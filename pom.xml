@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.pepsxx.hibernate.help</groupId>
-    <artifactId>pep_pro_hibernate_help</artifactId>
+    <artifactId>pep_hibernate_help</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -27,6 +27,12 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.7.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>4.29.2</version>
         </dependency>
     </dependencies>
 

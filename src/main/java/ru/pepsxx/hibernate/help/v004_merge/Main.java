@@ -3,9 +3,11 @@ package ru.pepsxx.hibernate.help.v004_merge;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import ru.pepsxx.hibernate.help.pre_start.PreStartUtil;
 
 public class Main {
     public static void main(String[] args) {
+        PreStartUtil.go();
 
         System.out.println("""
                 1:  Для работы hibernate нужна зависимость

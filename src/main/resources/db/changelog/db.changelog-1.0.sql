@@ -1,3 +1,5 @@
+--liquibase formatted sql
+--changeset pep_sxx:1
 DROP TABLE IF EXISTS public.Person CASCADE;
 DROP TABLE IF EXISTS public.Item CASCADE;
 DROP TABLE IF EXISTS public.people CASCADE;
@@ -210,5 +212,3 @@ CREATE TABLE primary_keys_table
 (
     id BIGINT PRIMARY KEY
 );
-
-
