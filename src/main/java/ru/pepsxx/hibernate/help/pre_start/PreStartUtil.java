@@ -12,7 +12,7 @@ public class PreStartUtil {
     static public void go() {
         try {
             DockerComposeUtil.start();
-//            Thread.sleep(3_000);
+            Thread.sleep(3_000);
             LiquibaseUtil.start();
         } catch (LiquibaseException | SQLException | IOException | InterruptedException e) {
             throw new RuntimeException(e);
